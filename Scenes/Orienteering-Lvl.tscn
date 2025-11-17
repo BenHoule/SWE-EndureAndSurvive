@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlxkck7m8ompw"]
+
+[ext_resource type="PackedScene" uid="uid://b7m8oao0p1q2r" path="res://Scenes/test_level.tscn" id="1_cnegq"]
+[ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_3tp2t"]
+
+[node name="OrienteeringLvl" type="Node3D"]
+
+[node name="MenuController" parent="." instance=ExtResource("2_3tp2t")]
+
+[node name="TestLevel" parent="." instance=ExtResource("1_cnegq")]

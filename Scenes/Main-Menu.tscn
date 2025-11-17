@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://krfnsnmgi0cb"]
+
+[ext_resource type="Script" uid="uid://b2nhey2xksjrw" path="res://Scripts/main_menu.gd" id="1_qibcp"]
+
+[node name="MenuController" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qibcp")
+
+[node name="menuBG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.29411766, 0.5764706, 0.10980392, 0.23137255)
+
+[node name="mainMenu" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="mainMenuVBox" type="VBoxContainer" parent="mainMenu"]
+layout_mode = 2
+theme_override_constants/separation = 72
+
+[node name="levelBtnContainer" type="HBoxContainer" parent="mainMenu/mainMenuVBox"]
+layout_mode = 2
+
+[node name="fireLvlBtn" type="Button" parent="mainMenu/mainMenuVBox/levelBtnContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "FIRE STARTING"
+
+[node name="shelterLvlBtn" type="Button" parent="mainMenu/mainMenuVBox/levelBtnContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "SHELTER BUILDING"
+
+[node name="orienteerLvlBtn" type="Button" parent="mainMenu/mainMenuVBox/levelBtnContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "ORIENTEERING"
+
+[node name="sysBtnContainer" type="HBoxContainer" parent="mainMenu/mainMenuVBox"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 800
+alignment = 1
+
+[node name="settingsBtn" type="Button" parent="mainMenu/mainMenuVBox/sysBtnContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "OPTIONS"
+
+[node name="quitBtn" type="Button" parent="mainMenu/mainMenuVBox/sysBtnContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "QUIT"

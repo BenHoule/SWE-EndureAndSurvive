@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://btxmw05ro3vbt"]
+
+[ext_resource type="PackedScene" uid="uid://b7m8oao0p1q2r" path="res://Scenes/test_level.tscn" id="1_vqfh5"]
+[ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_bxnat"]
+
+[node name="ShelterBuildingLvl" type="Node3D"]
+
+[node name="MenuController" parent="." instance=ExtResource("2_bxnat")]
+
+[node name="TestLevel" parent="." instance=ExtResource("1_vqfh5")]

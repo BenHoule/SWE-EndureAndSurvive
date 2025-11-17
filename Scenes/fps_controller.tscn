@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8x2y3qw4n5r6"]
+
+[ext_resource type="Script" uid="uid://c6g8kde4m3tel" path="res://Scripts/fps_controller.gd" id="1_n7vgw"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_player"]
+
+[node name="FPSController" type="CharacterBody3D"]
+script = ExtResource("1_n7vgw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_player")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="CrouchRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 1, 0)
+collision_mask = 3
