@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xhqsptv3ukyj"]
+
+[ext_resource type="Texture2D" uid="uid://dt8ns3qkkyoh8" path="res://Assets/stick.png" id="1_r78um"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_is1w6"]
+a = Vector2(7, -7)
+b = Vector2(-7, 7)
+
+[node name="Stick" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_r78um")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_is1w6")

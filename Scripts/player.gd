@@ -22,5 +22,8 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.play("right")
 	else:
 		animated_sprite_2d.play("default")
+		
+	if Input.is_action_just_pressed("next_level"):
+		get_tree().change_scene_to_file("res://Scenes/Shelter-Building-Lvl.tscn")
 
 	move_and_slide()
