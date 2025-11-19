@@ -246,6 +246,21 @@ tile_set = SubResource("TileSet_5so7a")
 tile_map_data = PackedByteArray("AAD+//f/AAAFAAUAAAD+//j/AAAFAAYAAAA=")
 tile_set = SubResource("TileSet_atnay")
 
+[node name="Log" parent="." instance=ExtResource("2_atnay")]
+position = Vector2(71, -121)
+
+[node name="Log2" parent="." instance=ExtResource("2_atnay")]
+position = Vector2(-206, -162)
+
+[node name="Log3" parent="." instance=ExtResource("2_atnay")]
+position = Vector2(-172, -14)
+
+[node name="Log4" parent="." instance=ExtResource("2_atnay")]
+position = Vector2(-165, 182)
+
+[node name="Log5" parent="." instance=ExtResource("2_atnay")]
+position = Vector2(33, 153)
+
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_atnay")]
 position = Vector2(0, -3)
 
@@ -270,21 +285,6 @@ text = "Collect  5 logs  and create
 a shelter before the 
 weather turns bad!!"
 horizontal_alignment = 1
-
-[node name="Log" parent="." instance=ExtResource("2_atnay")]
-position = Vector2(71, -121)
-
-[node name="Log2" parent="." instance=ExtResource("2_atnay")]
-position = Vector2(-206, -162)
-
-[node name="Log3" parent="." instance=ExtResource("2_atnay")]
-position = Vector2(-172, -14)
-
-[node name="Log4" parent="." instance=ExtResource("2_atnay")]
-position = Vector2(-165, 182)
-
-[node name="Log5" parent="." instance=ExtResource("2_atnay")]
-position = Vector2(33, 153)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
