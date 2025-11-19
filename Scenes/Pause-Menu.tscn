@@ -1,8 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://b30o5f1bq05fe"]
+[gd_scene load_steps=6 format=3 uid="uid://b30o5f1bq05fe"]
 
 [ext_resource type="Script" uid="uid://shcgvvdv4lag" path="res://Scripts/pause_menu.gd" id="1_emmkq"]
+[ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="2_jafy5"]
 
-[node name="MenuController" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jafy5"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45flq"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yb3gq"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="PauseMenuController" type="Control"]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -31,23 +65,44 @@ theme_override_constants/separation = 72
 [node name="resumeBtn" type="Button" parent="pauseMenu/pauseMenuVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_jafy5")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_jafy5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 text = "RESUME"
 
 [node name="settingsBtn" type="Button" parent="pauseMenu/pauseMenuVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_jafy5")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_jafy5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
+disabled = true
 text = "OPTIONS"
 
 [node name="mainMenuBtn" type="Button" parent="pauseMenu/pauseMenuVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_jafy5")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_jafy5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 text = "MAIN MENU"
 
 [node name="quitBtn" type="Button" parent="pauseMenu/pauseMenuVBox"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 56
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_jafy5")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_jafy5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 text = "QUIT"

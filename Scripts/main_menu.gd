@@ -14,8 +14,12 @@ enum LevelType {FIRE_STARTING, SHELTER_BUILDING, ORIENTEERING}
 func _ready() -> void:
 	# Connect level buttons
 	fireLvlBtn.pressed.connect(_load_level.bind(LevelType.FIRE_STARTING))
-	shelterLvlBtn.pressed.connect(_load_level.bind(LevelType.SHELTER_BUILDING))
-	orienteerLvlBtn.pressed.connect(_load_level.bind(LevelType.ORIENTEERING))
+	if global_game_data.completed_levels["fire"]:
+		shelterLvlBtn.pressed.connect(_load_level.bind(LevelType.SHELTER_BUILDING))
+		shelterLvlBtn.disabled = false
+	if global_game_data.completed_levels["shelter"]:
+		orienteerLvlBtn.pressed.connect(_load_level.bind(LevelType.ORIENTEERING))
+		orienteerLvlBtn.disabled = false
 	
 	# Connect other buttons
 	settingsBtn.pressed.connect(_open_settings)

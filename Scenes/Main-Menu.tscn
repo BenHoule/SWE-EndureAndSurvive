@@ -1,8 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://krfnsnmgi0cb"]
+[gd_scene load_steps=6 format=3 uid="uid://krfnsnmgi0cb"]
 
 [ext_resource type="Script" uid="uid://b2nhey2xksjrw" path="res://Scripts/main_menu.gd" id="1_qibcp"]
+[ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="2_qibcp"]
 
-[node name="MenuController" type="Control"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qibcp"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tq3op"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muovx"]
+content_margin_left = 15.0
+content_margin_top = 15.0
+content_margin_right = 15.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="MainMenuController" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,23 +69,41 @@ theme_override_constants/separation = 72
 
 [node name="levelBtnContainer" type="HBoxContainer" parent="mainMenu/mainMenuVBox"]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="fireLvlBtn" type="Button" parent="mainMenu/mainMenuVBox/levelBtnContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qibcp")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_qibcp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tq3op")
+theme_override_styles/hover = SubResource("StyleBoxFlat_muovx")
 text = "FIRE STARTING"
 
 [node name="shelterLvlBtn" type="Button" parent="mainMenu/mainMenuVBox/levelBtnContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qibcp")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_qibcp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tq3op")
+theme_override_styles/hover = SubResource("StyleBoxFlat_muovx")
+disabled = true
 text = "SHELTER BUILDING"
 
 [node name="orienteerLvlBtn" type="Button" parent="mainMenu/mainMenuVBox/levelBtnContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_font_sizes/font_size = 72
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qibcp")
+theme_override_font_sizes/font_size = 58
+theme_override_styles/normal = SubResource("StyleBoxFlat_qibcp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tq3op")
+theme_override_styles/hover = SubResource("StyleBoxFlat_muovx")
+disabled = true
 text = "ORIENTEERING"
 
 [node name="sysBtnContainer" type="HBoxContainer" parent="mainMenu/mainMenuVBox"]
@@ -63,11 +115,22 @@ alignment = 1
 [node name="settingsBtn" type="Button" parent="mainMenu/mainMenuVBox/sysBtnContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qibcp")
 theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_qibcp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tq3op")
+theme_override_styles/hover = SubResource("StyleBoxFlat_muovx")
+disabled = true
 text = "OPTIONS"
 
 [node name="quitBtn" type="Button" parent="mainMenu/mainMenuVBox/sysBtnContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_qibcp")
 theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_qibcp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tq3op")
+theme_override_styles/hover = SubResource("StyleBoxFlat_muovx")
 text = "QUIT"

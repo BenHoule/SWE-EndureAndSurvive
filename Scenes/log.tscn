@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp4pdissyxrw3"]
+[gd_scene load_steps=3 format=3 uid="uid://coyidp26h0vjs"]
 
 [ext_resource type="Texture2D" uid="uid://ba1mpqepnyolm" path="res://Assets/Log.png" id="1_5gxlv"]
 
@@ -6,6 +6,8 @@
 size = Vector2(12, 8)
 
 [node name="Log" type="Area2D"]
+z_index = 1
+collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_5gxlv")
