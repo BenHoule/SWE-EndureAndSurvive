@@ -151,16 +151,6 @@ limit_right = 285
 limit_bottom = 425
 limit_smoothed = true
 
-[node name="Label" type="Label" parent="CharacterBody2D/Camera2D"]
-offset_left = -114.0
-offset_top = -62.0
-offset_right = -64.0
-offset_bottom = -39.0
-theme_override_fonts/font = ExtResource("4_rcc7b")
-theme_override_font_sizes/font_size = 8
-text = "Time: 1,000"
-metadata/_edit_use_anchors_ = true
-
 [node name="Stick" parent="." instance=ExtResource("4_ouy1e")]
 position = Vector2(88, 185)
 
@@ -170,7 +160,7 @@ position = Vector2(-237, 178)
 [node name="Stick3" parent="." instance=ExtResource("4_ouy1e")]
 position = Vector2(-278, -93)
 
-[node name="Label" type="Label" parent="."]
+[node name="LevelPrompt" type="Label" parent="."]
 offset_left = -103.0
 offset_top = 9.0
 offset_right = 103.0
@@ -189,7 +179,7 @@ position = Vector2(-288, 304)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_rcc7b")
 
-[node name="Label2" type="Label" parent="Area2D/CollisionShape2D"]
+[node name="LevelHint" type="Label" parent="Area2D/CollisionShape2D"]
 offset_left = -104.0
 offset_top = -47.0
 offset_right = 102.0
@@ -215,4 +205,31 @@ offset_left = 474.0
 offset_top = -28.0
 offset_right = 474.0
 offset_bottom = -28.0
+metadata/_edit_use_anchors_ = true
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TimerContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+offset_right = 145.0
+offset_bottom = 55.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Timer" type="Label" parent="CanvasLayer/HUD/TimerContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_rcc7b")
+theme_override_font_sizes/font_size = 20
+text = "Time: 1,000"
 metadata/_edit_use_anchors_ = true
