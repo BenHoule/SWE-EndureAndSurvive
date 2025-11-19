@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://btxmw05ro3vbt"]
 
 [ext_resource type="Texture2D" uid="uid://d0d0m7qexngxa" path="res://Assets/basictiles.png" id="1_bxnat"]
-[ext_resource type="PackedScene" uid="uid://cp4pdissyxrw3" path="res://Scenes/log.tscn" id="2_atnay"]
+[ext_resource type="PackedScene" path="res://Scenes/log.tscn" id="2_atnay"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_bxnat"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="3_atnay"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_bxnat"]
@@ -246,14 +246,6 @@ tile_set = SubResource("TileSet_5so7a")
 tile_map_data = PackedByteArray("AAD+//f/AAAFAAUAAAD+//j/AAAFAAYAAAA=")
 tile_set = SubResource("TileSet_atnay")
 
-[node name="MenuController" parent="." instance=ExtResource("2_bxnat")]
-visible = false
-offset_left = 474.0
-offset_top = -28.0
-offset_right = 474.0
-offset_bottom = -28.0
-metadata/_edit_use_anchors_ = true
-
 [node name="CharacterBody2D" parent="." instance=ExtResource("3_atnay")]
 position = Vector2(0, -3)
 
@@ -301,3 +293,13 @@ position = Vector2(-165, 182)
 
 [node name="Log5" parent="." instance=ExtResource("2_atnay")]
 position = Vector2(33, 153)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuController" parent="CanvasLayer" instance=ExtResource("2_bxnat")]
+visible = false
+offset_left = 474.0
+offset_top = -28.0
+offset_right = 474.0
+offset_bottom = -28.0
+metadata/_edit_use_anchors_ = true
