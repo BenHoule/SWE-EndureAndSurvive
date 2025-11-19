@@ -14,21 +14,25 @@ enum LevelType {FIRE_STARTING, SHELTER_BUILDING, ORIENTEERING}
 func _ready() -> void:
 	# Connect level buttons
 	fireLvlBtn.pressed.connect(_load_level.bind(LevelType.FIRE_STARTING))
-	if global_game_data.completed_levels["fire"]:
-		shelterLvlBtn.pressed.connect(_load_level.bind(LevelType.SHELTER_BUILDING))
-		shelterLvlBtn.disabled = false
-	if global_game_data.completed_levels["shelter"]:
-		orienteerLvlBtn.pressed.connect(_load_level.bind(LevelType.ORIENTEERING))
-		orienteerLvlBtn.disabled = false
+	orienteerLvlBtn.pressed.connect(_load_level.bind(LevelType.ORIENTEERING))
+	shelterLvlBtn.pressed.connect(_load_level.bind(LevelType.SHELTER_BUILDING))
 	
 	# Connect other buttons
 	settingsBtn.pressed.connect(_open_settings)
 	quitBtn.pressed.connect(_quit)
+	
+	# Check for completed levels
+	if global_game_data.completed_levels["fire"]:
+		shelterLvlBtn.disabled = false
+	if global_game_data.completed_levels["shelter"]:
+		orienteerLvlBtn.disabled = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("next_level"):
+		shelterLvlBtn.disabled = false
+		orienteerLvlBtn.disabled = false
 
 # Change scene to chosen level
 func _load_level(level: LevelType) -> void:
