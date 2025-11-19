@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://bkdil8t825bub"]
 
-[ext_resource type="Script" uid="uid://iwfe4ev3j5bt" path="res://Scripts/fire_starting_lvl.gd" id="1_45yrl"]
+[ext_resource type="Script" uid="uid://fbtf5a5nmsyl" path="res://Scenes/fire_starting_lvl.gd" id="1_45yrl"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_fkh7n"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="2_q2hht"]
-[ext_resource type="PackedScene" uid="uid://dffdevs8g2oi6" path="res://Scenes/GameMap.tscn" id="2_rcc7b"]
+[ext_resource type="PackedScene" path="res://Scenes/GameMap.tscn" id="2_rcc7b"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_rcc7b"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcc7b"]
