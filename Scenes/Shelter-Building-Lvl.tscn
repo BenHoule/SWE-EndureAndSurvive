@@ -226,7 +226,7 @@ texture = ExtResource("1_bxnat")
 [sub_resource type="TileSet" id="TileSet_atnay"]
 sources/0 = SubResource("TileSetAtlasSource_bxnat")
 
-[node name="Node2D" type="Node2D"]
+[node name="LevelController" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_5so7a")
@@ -263,6 +263,7 @@ offset_left = -103.0
 offset_top = 14.0
 offset_right = 103.0
 offset_bottom = 62.0
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_bxnat")
 theme_override_font_sizes/font_size = 8
 text = "Collect  5 logs  and create 
@@ -317,7 +318,32 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Timer" type="Label" parent="CanvasLayer/HUD/TimerContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_bxnat")
 theme_override_font_sizes/font_size = 20
 text = "Time: 1,000"
 metadata/_edit_use_anchors_ = true
+
+[node name="LogCntContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_bottom = 55.0
+grow_horizontal = 0
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="LogCnt" type="Label" parent="CanvasLayer/HUD/LogCntContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_bxnat")
+theme_override_font_sizes/font_size = 20
+text = "0/5 Logs"
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]

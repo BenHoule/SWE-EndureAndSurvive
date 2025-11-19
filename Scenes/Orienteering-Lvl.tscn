@@ -119,7 +119,7 @@ texture = ExtResource("1_6ngfu")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tvdui")
 
-[node name="Node2D2" type="Node2D"]
+[node name="LevelController" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_yk6wr")
@@ -152,6 +152,7 @@ offset_left = -103.0
 offset_top = 14.0
 offset_right = 103.0
 offset_bottom = 62.0
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_6ngfu")
 theme_override_font_sizes/font_size = 8
 text = "Using the coordinate
@@ -189,6 +190,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Coords" type="Label" parent="CanvasLayer/HUD/CoordsContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_6ngfu")
 theme_override_font_sizes/font_size = 20
 text = "X: 0 Y: 0"
@@ -205,6 +207,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="Timer" type="Label" parent="CanvasLayer/HUD/TimerContainer"]
 layout_mode = 2
+theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_6ngfu")
 theme_override_font_sizes/font_size = 20
 text = "Time: 1,000"
@@ -217,3 +220,5 @@ offset_top = -28.0
 offset_right = 474.0
 offset_bottom = -28.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
