@@ -25,15 +25,15 @@ func _process(delta: float) -> void:
 
 func _pause() -> void:
 	show()
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	# Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	
 
 func _resume() -> void:
 	hide()
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	# Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
-	
+
 
 func _open_settings() -> void:
 	pass
