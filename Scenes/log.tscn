@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp4pdissyxrw3"]
+
+[ext_resource type="Texture2D" uid="uid://ba1mpqepnyolm" path="res://Assets/Log.png" id="1_5gxlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0a2b"]
+size = Vector2(12, 8)
+
+[node name="Log" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5gxlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a0a2b")

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xhqsptv3ukyj" path="res://Scenes/stick.tscn" id="4_ouy1e"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_rcc7b"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2hht"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rcc7b"]
 texture = ExtResource("2_ouy1e")
 0:0/0 = 0
 1:0/0 = 0
@@ -25,6 +25,7 @@ texture = ExtResource("2_ouy1e")
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:1/0 = 0
 7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -33,6 +34,7 @@ texture = ExtResource("2_ouy1e")
 5:2/0 = 0
 6:2/0 = 0
 7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
@@ -116,7 +118,7 @@ texture = ExtResource("2_ouy1e")
 
 [sub_resource type="TileSet" id="TileSet_45yrl"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_q2hht")
+sources/0 = SubResource("TileSetAtlasSource_rcc7b")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcc7b"]
 radius = 76.00658
@@ -165,6 +167,7 @@ offset_bottom = -39.0
 theme_override_fonts/font = ExtResource("4_rcc7b")
 theme_override_font_sizes/font_size = 8
 text = "Time: 1,000"
+metadata/_edit_use_anchors_ = true
 
 [node name="Stick" parent="." instance=ExtResource("4_ouy1e")]
 position = Vector2(88, 185)
@@ -186,6 +189,7 @@ text = "Collect 3 sticks and create a
 fire in a safe location before
 you freeze!!"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-288, 304)
@@ -209,3 +213,4 @@ for rescue signal!
 3 sticks and is near area.
 Press N to continue)"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
