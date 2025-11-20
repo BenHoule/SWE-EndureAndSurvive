@@ -13,6 +13,7 @@ radius = 76.00658
 script = ExtResource("1_rcc7b")
 
 [node name="GameMap" parent="." instance=ExtResource("2_rcc7b")]
+layer_0/tile_data = PackedInt32Array(1310702, 131072, 1, 1310701, 131072, 1, 1310700, 131072, 1)
 
 [node name="Player" parent="." instance=ExtResource("2_q2hht")]
 position = Vector2(0, -3)
