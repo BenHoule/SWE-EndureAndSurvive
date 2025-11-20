@@ -10,7 +10,7 @@ var timerString: String = "Time: %.1f"
 @onready var direction_message: Label = $Viewport/HUD/DirectionMessage
 @onready var player: CharacterBody2D = $Player
 @onready var red_check_2: Sprite2D = $RedCheck2
-
+@onready var win_menu_controller: Control = $Viewport/winMenuController
 
 var nextLevel: String = "res://Scenes/Main-Menu.tscn"
 var levelComplete: bool = false 
@@ -29,6 +29,7 @@ const DEAD_ZONE := 10.0
 func _ready() -> void:
 	red_check.hide()
 	red_check_2.hide()
+	win_menu_controller.hide()
 	if direction_message:
 		direction_message.text = "Find the first target"
 		await get_tree().create_timer(2.0).timeout
@@ -48,7 +49,7 @@ func _update_direction_message() -> void:
 		return
 
 	if current_target_index >= target_positions.size():
-		direction_message.text = "All locations found!"
+		direction_message.hide()
 		return
 
 	var target_position: Vector2 = target_positions[current_target_index]
@@ -64,6 +65,7 @@ func _update_direction_message() -> void:
 		else:
 			red_check_2.show()
 			levelComplete = true
+			win_menu_controller.show()
 		return
 
 	direction_message.text = _get_direction_text(to_target)
@@ -97,5 +99,4 @@ func _get_direction_text(to_target: Vector2) -> String:
 
 
 func _on_timer_timeout() -> void:
-	$"Viewport/HUD/WIPMsg-TEMP".show()
 	global_game_data.mark_level_complete("orienteer")
