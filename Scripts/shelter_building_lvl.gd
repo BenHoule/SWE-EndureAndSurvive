@@ -3,17 +3,18 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 @onready var timerString: String = "Time: %.1f"
-
+@onready var win_menu_controller: Control = $Viewport/winMenuController
 @onready var logCntDisplay: Label = $Viewport/HUD/LogCntContainer/LogCnt
 @onready var logPrefab: Resource = preload("res://Scenes/log.tscn")
 var logCnt = 0
 
 var nextLevel = "res://Scenes/Orienteering-Lvl.tscn"
-var levelComplete: bool = true # WARNING: Change to false once level is finished
+var levelComplete: bool = false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	win_menu_controller.hide()
 	var log1: Area2D = logPrefab.instantiate()
 	var log2: Area2D = logPrefab.instantiate()
 	var log3: Area2D = logPrefab.instantiate()
@@ -37,14 +38,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
 	
-	if Input.is_action_just_pressed("next_level") and levelComplete:
-		get_tree().change_scene_to_file(nextLevel)
+	if levelComplete:
+		win_menu_controller.show()
 
 # Remove log, update log counter + HUD
 func _on_log_pickup(body: Node2D, _log: Area2D):
 	_log.queue_free()
 	logCnt += 1
 	logCntDisplay.set_text("%d/5 Logs" % logCnt)
+	if (logCnt == 5):
+		levelComplete = true
 
 
 func _on_timer_timeout() -> void:

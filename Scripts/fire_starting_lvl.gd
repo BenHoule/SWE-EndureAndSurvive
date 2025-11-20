@@ -3,7 +3,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 var timerString: String = "Time: %.1f"
-
+@onready var win_menu_controller: Control = $Viewport/winMenuController
 @onready var stickCntDisplay: Label = $Viewport/HUD/StickCntContainer/StickCnt
 @onready var stickPrefab: Resource = preload("res://Scenes/stick.tscn")
 var stickCnt: int = 0
@@ -15,6 +15,7 @@ var levelComplete: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	win_menu_controller.hide()
 	var stick1: Area2D = stickPrefab.instantiate()
 	var stick2: Area2D = stickPrefab.instantiate()
 	var stick3: Area2D = stickPrefab.instantiate()
@@ -35,15 +36,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
 	
-	if Input.is_action_just_pressed("next_level") and levelComplete:
+	if levelComplete:
 		global_game_data.mark_level_complete("fire")
-		get_tree().change_scene_to_file(nextLevel)
+		win_menu_controller.show()
 
 
 func _on_stick_pickup(body: Node2D, stick: Area2D) -> void:
 	stick.queue_free()
 	stickCnt += 1
 	stickCntDisplay.set_text("%d/3 Sticks" % stickCnt)
+	if(stickCnt == 3):
+		levelComplete = true
 
 # Remove stick, update stick counter + HUD
 func _on_finish_area_body_entered(body: Node2D) -> void:

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkdil8t825bub"]
+[gd_scene load_steps=8 format=3 uid="uid://bkdil8t825bub"]
 
 [ext_resource type="Script" uid="uid://iwfe4ev3j5bt" path="res://Scripts/fire_starting_lvl.gd" id="1_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_fkh7n"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="2_q2hht"]
-[ext_resource type="PackedScene" uid="uid://dffdevs8g2oi6" path="res://Scenes/GameMap.tscn" id="2_rcc7b"]
+[ext_resource type="PackedScene" path="res://Scenes/GameMap.tscn" id="2_rcc7b"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_rcc7b"]
+[ext_resource type="PackedScene" uid="uid://bmalw0jv4f7gd" path="res://Scenes/winMenu.tscn" id="5_45yrl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcc7b"]
 radius = 76.00658
@@ -70,6 +71,18 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Viewport" type="CanvasLayer" parent="."]
 
+[node name="winMenuController" parent="Viewport" instance=ExtResource("5_45yrl")]
+anchors_preset = -1
+anchor_left = -0.031770833
+anchor_top = -0.043518517
+anchor_right = 0.94635415
+anchor_bottom = 1.0064815
+offset_left = 471.0
+offset_top = 225.0
+offset_right = -654.0
+offset_bottom = -520.0
+metadata/_edit_use_anchors_ = true
+
 [node name="PauseMenu" parent="Viewport" instance=ExtResource("2_fkh7n")]
 visible = false
 offset_left = 474.0
@@ -79,10 +92,15 @@ offset_bottom = -28.0
 metadata/_edit_use_anchors_ = true
 
 [node name="HUD" type="Control" parent="Viewport"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -264.0
+offset_top = -245.0
+offset_right = -264.0
+offset_bottom = -245.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3

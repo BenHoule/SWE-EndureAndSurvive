@@ -40,9 +40,6 @@ func _process(delta: float) -> void:
 
 	_update_direction_message()
 
-	if Input.is_action_just_pressed("next_level") and levelComplete:
-		get_tree().change_scene_to_file(nextLevel)
-
 
 func _update_direction_message() -> void:
 	if player == null or direction_message == null:
