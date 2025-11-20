@@ -1,15 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dlxkck7m8ompw"]
+[gd_scene load_steps=8 format=3 uid="uid://dlxkck7m8ompw"]
 
 [ext_resource type="Script" uid="uid://fyj0g66fhmti" path="res://Scripts/orienteering_lvl.gd" id="1_tvdui"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_3tp2t"]
-[ext_resource type="PackedScene" uid="uid://dffdevs8g2oi6" path="res://Scenes/GameMap.tscn" id="2_tvdui"]
+[ext_resource type="PackedScene" path="res://Scenes/GameMap.tscn" id="2_tvdui"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="3_tvdui"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_6ngfu"]
+[ext_resource type="Texture2D" uid="uid://b777npdg61lo6" path="res://Assets/compass.png" id="6_yk6wr"]
+[ext_resource type="Texture2D" uid="uid://blka434tpwiko" path="res://Assets/RedCheck.png" id="7_5vvvl"]
 
 [node name="LevelController" type="Node2D"]
 script = ExtResource("1_tvdui")
 
 [node name="GameMap" parent="." instance=ExtResource("2_tvdui")]
+layer_0/tile_data = PackedInt32Array(-589849, 131072, 1, -524313, 131072, 1, -589848, 131072, 1, -524312, 131072, 1)
 
 [node name="Player" parent="." instance=ExtResource("3_tvdui")]
 position = Vector2(0, -3)
@@ -32,9 +35,9 @@ offset_bottom = 62.0
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_6ngfu")
 theme_override_font_sizes/font_size = 8
-text = "Use the coordinate
-system to navigate 
-to the rescue location!"
+text = "Use the compass
+ to navigate to
+the 2 map locations!"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -53,38 +56,27 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -104.0
+offset_right = -210.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="CoordsContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -105.0
-offset_bottom = 55.0
-grow_horizontal = 0
-mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="Coords" type="Label" parent="CanvasLayer/HUD/CoordsContainer"]
-layout_mode = 2
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("4_6ngfu")
-theme_override_font_sizes/font_size = 20
-text = "X: 0 Y: 0"
-metadata/_edit_use_anchors_ = true
-
 [node name="TimerContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
 layout_mode = 1
-offset_right = 145.0
-offset_bottom = 55.0
+anchors_preset = -1
+anchor_left = 0.109000005
+anchor_top = 0.095000006
+anchor_right = 0.11000001
+anchor_bottom = 0.098000005
+offset_left = 21.719986
+offset_top = 38.399994
+offset_right = 339.8
+offset_bottom = 139.16
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
@@ -94,31 +86,47 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_6ngfu")
-theme_override_font_sizes/font_size = 20
-text = "Time: 1,000"
+theme_override_font_sizes/font_size = 48
 metadata/_edit_use_anchors_ = true
 
-[node name="WIPMsg-TEMP" type="Label" parent="CanvasLayer/HUD"]
-visible = false
+[node name="CompassContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -189.5
-offset_top = -11.5
-offset_right = 189.5
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = 0.10700001
+anchor_top = 0.09
+anchor_right = 0.112
+anchor_bottom = 0.097
+offset_left = -50.440018
+offset_top = -1.2000046
+offset_right = -30.040009
+offset_bottom = 20.239998
+
+[node name="Compass" type="Sprite2D" parent="CanvasLayer/HUD/CompassContainer"]
+position = Vector2(1800, 900)
+scale = Vector2(8, 8)
+texture = ExtResource("6_yk6wr")
+
+[node name="DirectionMessage" type="Label" parent="CanvasLayer/HUD"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = 146.0
+offset_right = 1195.0
+offset_bottom = 241.0
 theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 20
-text = "Level is WIP, press N to return to the main menu"
+theme_override_fonts/font = ExtResource("4_6ngfu")
+theme_override_font_sizes/font_size = 54
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="RedCheck" type="Sprite2D" parent="."]
+position = Vector2(-388, -145)
+texture = ExtResource("7_5vvvl")
+
+[node name="RedCheck2" type="Sprite2D" parent="."]
+position = Vector2(165, 230)
+texture = ExtResource("7_5vvvl")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
