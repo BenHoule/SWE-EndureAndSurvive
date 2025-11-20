@@ -275,9 +275,9 @@ a shelter before the
 weather turns bad!!"
 horizontal_alignment = 1
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Viewport" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("2_bxnat")]
+[node name="PauseMenu" parent="Viewport" instance=ExtResource("2_bxnat")]
 visible = false
 offset_left = 474.0
 offset_top = -28.0
@@ -285,7 +285,7 @@ offset_right = 474.0
 offset_bottom = -28.0
 metadata/_edit_use_anchors_ = true
 
-[node name="HUD" type="Control" parent="CanvasLayer"]
+[node name="HUD" type="Control" parent="Viewport"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -296,7 +296,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="TimerContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
+[node name="TimerContainer" type="MarginContainer" parent="Viewport/HUD"]
 layout_mode = 1
 offset_right = 145.0
 offset_bottom = 55.0
@@ -305,7 +305,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Timer" type="Label" parent="CanvasLayer/HUD/TimerContainer"]
+[node name="Timer" type="Label" parent="Viewport/HUD/TimerContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_bxnat")
@@ -313,7 +313,7 @@ theme_override_font_sizes/font_size = 20
 text = "Time: 1,000"
 metadata/_edit_use_anchors_ = true
 
-[node name="LogCntContainer" type="MarginContainer" parent="CanvasLayer/HUD"]
+[node name="LogCntContainer" type="MarginContainer" parent="Viewport/HUD"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -327,7 +327,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="LogCnt" type="Label" parent="CanvasLayer/HUD/LogCntContainer"]
+[node name="LogCnt" type="Label" parent="Viewport/HUD/LogCntContainer"]
 layout_mode = 2
 theme_override_constants/outline_size = 3
 theme_override_fonts/font = ExtResource("4_bxnat")
@@ -335,7 +335,7 @@ theme_override_font_sizes/font_size = 20
 text = "0/5 Logs"
 metadata/_edit_use_anchors_ = true
 
-[node name="WIPMsg-TEMP" type="Label" parent="CanvasLayer/HUD"]
+[node name="WIPMsg-TEMP" type="Label" parent="Viewport/HUD"]
 visible = false
 layout_mode = 1
 anchors_preset = 8

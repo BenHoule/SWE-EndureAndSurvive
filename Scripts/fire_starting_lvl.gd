@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var timerDisplay: Label = $CanvasLayer/HUD/TimerContainer/Timer
+@onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 var timerString: String = "Time: %.1f"
 
-@onready var stickCntDisplay: Label = $CanvasLayer/HUD/StickCntContainer/StickCnt
+@onready var stickCntDisplay: Label = $Viewport/HUD/StickCntContainer/StickCnt
 @onready var stickPrefab: Resource = preload("res://Scenes/stick.tscn")
 var stickCnt: int = 0
 

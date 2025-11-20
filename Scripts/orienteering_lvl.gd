@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var timerDisplay: Label = $CanvasLayer/HUD/TimerContainer/Timer
+@onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 var timerString: String = "Time: %.1f"
 
-@onready var coordDisplay: Label = $CanvasLayer/HUD/CoordsContainer/Coords
+@onready var coordDisplay: Label = $Viewport/HUD/CoordsContainer/Coords
 
 @onready var player: CharacterBody2D = $Player
 
@@ -26,6 +26,6 @@ func _process(delta: float) -> void:
 
 # Fail condition
 func _on_timer_timeout() -> void:
-	$"CanvasLayer/HUD/WIPMsg-TEMP".show()
+	$"Viewport/HUD/WIPMsg-TEMP".show()
 	global_game_data.mark_level_complete("orienteer")
 	

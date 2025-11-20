@@ -1,10 +1,10 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
-@onready var timerDisplay: Label = $CanvasLayer/HUD/TimerContainer/Timer
+@onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 @onready var timerString: String = "Time: %.1f"
 
-@onready var logCntDisplay: Label = $CanvasLayer/HUD/LogCntContainer/LogCnt
+@onready var logCntDisplay: Label = $Viewport/HUD/LogCntContainer/LogCnt
 @onready var logPrefab: Resource = preload("res://Scenes/log.tscn")
 var logCnt = 0
 
@@ -48,5 +48,5 @@ func _on_log_pickup(body: Node2D, _log: Area2D):
 
 
 func _on_timer_timeout() -> void:
-	$"CanvasLayer/HUD/WIPMsg-TEMP".show()
+	$"Viewport/HUD/WIPMsg-TEMP".show()
 	global_game_data.mark_level_complete("shelter")
