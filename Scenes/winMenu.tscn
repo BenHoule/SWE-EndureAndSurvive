@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bmalw0jv4f7gd"]
 
-[ext_resource type="Script" uid="uid://bqke1ftyfq8vn" path="res://Scenes/win_menu.gd" id="1_twskt"]
+[ext_resource type="Script" uid="uid://bqke1ftyfq8vn" path="res://Scripts/win_menu.gd" id="1_twskt"]
 [ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="1_uyqdj"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="2_2vu40"]
 
@@ -47,19 +47,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_twskt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_right = 1177.0072
-offset_bottom = 687.0
-color = Color(0.2651225, 0.33725655, 0.06642757, 1)
+[node name="winMenu" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="nextBtn" type="Button" parent="."]
+[node name="winMenuVBox" type="VBoxContainer" parent="winMenu"]
+layout_mode = 2
+theme_override_constants/separation = 72
+
+[node name="Label" type="Label" parent="winMenu/winMenuVBox"]
+layout_mode = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("2_2vu40")
+theme_override_font_sizes/font_size = 96
+text = "Level Completed"
+horizontal_alignment = 1
+
+[node name="nextBtn" type="Button" parent="winMenu/winMenuVBox"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 450.0
-offset_top = 313.0
-offset_right = 723.0
-offset_bottom = 387.0
+layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_uyqdj")
 theme_override_font_sizes/font_size = 58
@@ -68,13 +78,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 text = "NEXT"
 
-[node name="settingsBtn" type="Button" parent="."]
+[node name="settingsBtn" type="Button" parent="winMenu/winMenuVBox"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 452.0
-offset_top = 419.0
-offset_right = 732.0
-offset_bottom = 486.0
+layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_uyqdj")
 theme_override_font_sizes/font_size = 58
@@ -84,13 +90,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 disabled = true
 text = "OPTIONS"
 
-[node name="mainMenuBtn" type="Button" parent="."]
+[node name="mainMenuBtn" type="Button" parent="winMenu/winMenuVBox"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 423.0
-offset_top = 522.0
-offset_right = 769.0
-offset_bottom = 596.0
+layout_mode = 2
 theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_uyqdj")
 theme_override_font_sizes/font_size = 58
@@ -98,19 +100,3 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jafy5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 text = "MAIN MENU"
-
-[node name="VSplitContainer" type="VSplitContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 132.0
-offset_top = 87.0
-offset_right = 1068.0
-offset_bottom = 268.0
-theme_override_fonts/font = ExtResource("2_2vu40")
-theme_override_font_sizes/font_size = 96
-text = "Level Completed"
-horizontal_alignment = 1

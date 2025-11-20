@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://coyidp26h0vjs"]
 
-[ext_resource type="Texture2D" uid="uid://bd071jlvuofht" path="res://Assets/Transparent .PNG Files/wood_1.png" id="1_wmk0c"]
+[ext_resource type="Texture2D" uid="uid://bd071jlvuofht" path="res://Assets/Wood_Sprites/wood_1.png" id="1_wmk0c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wmk0c"]
 radius = 2.8284273

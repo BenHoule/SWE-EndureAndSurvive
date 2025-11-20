@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var dialogueBox: Label = $DialogueBox
 
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2(
@@ -25,3 +26,10 @@ func _physics_process(delta: float) -> void:
 		
 
 	move_and_slide()
+
+func speak(text: String) -> void:
+	dialogueBox.set_text(text)
+	dialogueBox.show()
+	await get_tree().create_timer(2.0).timeout
+	dialogueBox.hide()
+	dialogueBox.set_text("")

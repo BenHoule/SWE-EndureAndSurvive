@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://xhqsptv3ukyj"]
+[gd_scene load_steps=4 format=3 uid="uid://xhqsptv3ukyj"]
 
-[ext_resource type="Texture2D" uid="uid://crcr4ab5iw4dv" path="res://Assets/Transparent .PNG Files/wood_3.png" id="1_r78um"]
+[ext_resource type="Script" uid="uid://du1i3qd8oubk1" path="res://Scenes/stick.gd" id="1_is1w6"]
+[ext_resource type="Texture2D" uid="uid://vrji6jvchrp3" path="res://Assets/Wood_Sprites/sprite-sheet.png" id="1_r78um"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r78um"]
 radius = 2.8284273
@@ -10,10 +11,13 @@ height = 14.392304
 z_index = 1
 collision_layer = 4
 collision_mask = 2
+script = ExtResource("1_is1w6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_r78um")
+region_enabled = true
+region_rect = Rect2(128, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.7853982

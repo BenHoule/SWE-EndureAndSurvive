@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://1xgjv86wmaqx"]
+[gd_scene load_steps=19 format=3 uid="uid://1xgjv86wmaqx"]
 
 [ext_resource type="Script" uid="uid://hyhpw4tyubcg" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://bkajr1m8m1oes" path="res://Assets/characters.png" id="1_xhfnw"]
+[ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="3_gntrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rpqav"]
 atlas = ExtResource("1_xhfnw")
@@ -139,3 +140,25 @@ frame_progress = 0.4336585
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.15, 0.15)
 shape = SubResource("CircleShape2D_tdg3f")
+
+[node name="DialogueBox" type="Label" parent="."]
+visible = false
+z_index = 4
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -38.0
+offset_top = -18.0
+offset_right = 117.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("3_gntrk")
+theme_override_font_sizes/font_size = 16
+text = "This wood is too wet!"
+horizontal_alignment = 1
+vertical_alignment = 1

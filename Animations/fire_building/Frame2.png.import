@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnhlighhhe1p8"
-path="res://.godot/imported/wood_7.png-58f9e25322969ad8cf22c03280ca26d9.ctex"
+uid="uid://c72ytns0mihgc"
+path="res://.godot/imported/Frame2.png-cada01d16a25b77039481791639fac6e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Transparent .PNG Files/wood_7.png"
-dest_files=["res://.godot/imported/wood_7.png-58f9e25322969ad8cf22c03280ca26d9.ctex"]
+source_file="res://Animations/fire_building/Frame2.png"
+dest_files=["res://.godot/imported/Frame2.png-cada01d16a25b77039481791639fac6e.ctex"]
 
 [params]
 
