@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlxkck7m8ompw"]
+[gd_scene load_steps=10 format=3 uid="uid://dlxkck7m8ompw"]
 
 [ext_resource type="Script" uid="uid://fyj0g66fhmti" path="res://Scripts/orienteering_lvl.gd" id="1_tvdui"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_3tp2t"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="3_tvdui"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_6ngfu"]
 [ext_resource type="PackedScene" uid="uid://bmalw0jv4f7gd" path="res://Scenes/winMenu.tscn" id="5_2w8f2"]
+[ext_resource type="PackedScene" uid="uid://c7s3aac4jxuvm" path="res://Scenes/lose_menu_controller.tscn" id="5_aj0kj"]
 [ext_resource type="Texture2D" uid="uid://b777npdg61lo6" path="res://Assets/compass.png" id="6_yk6wr"]
 [ext_resource type="Texture2D" uid="uid://blka434tpwiko" path="res://Assets/RedCheck.png" id="7_5vvvl"]
 
@@ -43,6 +44,12 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Viewport" type="CanvasLayer" parent="."]
+
+[node name="loseMenuController" parent="Viewport" instance=ExtResource("5_aj0kj")]
+offset_left = 397.0
+offset_top = 184.0
+offset_right = 397.0
+offset_bottom = 184.0
 
 [node name="winMenuController" parent="Viewport" instance=ExtResource("5_2w8f2")]
 anchors_preset = -1
@@ -129,7 +136,7 @@ theme_override_fonts/font = ExtResource("4_6ngfu")
 theme_override_font_sizes/font_size = 54
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 30.0
 one_shot = true
 autostart = true
 

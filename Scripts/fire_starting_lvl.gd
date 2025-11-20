@@ -36,7 +36,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
 	
-	if levelComplete:
+	if levelComplete && Input.is_action_just_pressed("next_level"):
 		global_game_data.mark_level_complete("fire")
 		win_menu_controller.show()
 
@@ -45,8 +45,6 @@ func _on_stick_pickup(body: Node2D, stick: Area2D) -> void:
 	stick.queue_free()
 	stickCnt += 1
 	stickCntDisplay.set_text("%d/3 Sticks" % stickCnt)
-	if(stickCnt == 3):
-		levelComplete = true
 
 # Remove stick, update stick counter + HUD
 func _on_finish_area_body_entered(body: Node2D) -> void:

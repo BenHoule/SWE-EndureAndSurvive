@@ -48,8 +48,4 @@ func _on_log_pickup(body: Node2D, _log: Area2D):
 	logCntDisplay.set_text("%d/5 Logs" % logCnt)
 	if (logCnt == 5):
 		levelComplete = true
-
-
-func _on_timer_timeout() -> void:
-	$"Viewport/HUD/WIPMsg-TEMP".show()
-	global_game_data.mark_level_complete("shelter")
+		global_game_data.mark_level_complete("shelter")

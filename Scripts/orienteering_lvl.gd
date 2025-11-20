@@ -11,6 +11,7 @@ var timerString: String = "Time: %.1f"
 @onready var player: CharacterBody2D = $Player
 @onready var red_check_2: Sprite2D = $RedCheck2
 @onready var win_menu_controller: Control = $Viewport/winMenuController
+@onready var lose_menu_controller: Control = $Viewport/loseMenuController
 
 var nextLevel: String = "res://Scenes/Main-Menu.tscn"
 var levelComplete: bool = false 
@@ -30,15 +31,15 @@ func _ready() -> void:
 	red_check.hide()
 	red_check_2.hide()
 	win_menu_controller.hide()
-	if direction_message:
-		direction_message.text = "Find the first target"
-		await get_tree().create_timer(2.0).timeout
-
+	lose_menu_controller.hide()
 
 func _process(delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
 
 	_update_direction_message()
+	
+	if(timer.time_left <= 0):
+		lose_menu_controller.show()
 
 
 func _update_direction_message() -> void:
@@ -63,6 +64,8 @@ func _update_direction_message() -> void:
 			red_check_2.show()
 			levelComplete = true
 			win_menu_controller.show()
+			global_game_data.mark_level_complete("orienteer")
+			timer.stop()
 		return
 
 	direction_message.text = _get_direction_text(to_target)
@@ -93,7 +96,3 @@ func _get_direction_text(to_target: Vector2) -> String:
 		return "Go southwest"
 
 	return "Almost there..."
-
-
-func _on_timer_timeout() -> void:
-	global_game_data.mark_level_complete("orienteer")
