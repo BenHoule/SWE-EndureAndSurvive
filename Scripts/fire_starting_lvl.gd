@@ -6,9 +6,10 @@ extends Node2D
 @onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 var timerString: String = "Time: %.1f"
 
-@onready var stickCntDisplay: Label = $Viewport/HUD/StickCntContainer/StickCnt
-@onready var stickPrefab: Resource = preload("res://Scenes/stick.tscn")
-var stickCnt: int = 0
+@onready var tinderCntDisplay: Label = $Viewport/HUD/VBoxContainer/TinderCntContainer/TinderCnt
+@onready var kindlingCntDisplay: Label = $Viewport/HUD/VBoxContainer/KindlingCntContainer/KindlingCnt
+@onready var fuelCntDisplay: Label = $Viewport/HUD/VBoxContainer/FuelCntContainer/FuelCnt
+
 
 @onready var finishArea: Area2D = $FinishArea
 @onready var levelHint: Label = $FinishArea/CollisionShape2D/LevelHint
@@ -22,66 +23,62 @@ var nextLevel: String = "res://Scenes/Shelter-Building-Lvl.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	# Spawn sticks
-	var stick1: Area2D = stickPrefab.instantiate()
-	var stick2: Area2D = stickPrefab.instantiate()
-	var stick3: Area2D = stickPrefab.instantiate()
-	var sticks: Dictionary[Area2D, Vector2] = {
-		stick1: Vector2(88.0, 185.0),
-		stick2: Vector2(-237.0, 178.0),
-		stick3: Vector2(-278.0, -93.0)
-	}
-	for stick in sticks:
-		stick.set_position(sticks[stick])
-		add_child(stick)
-		stick.body_entered.connect(_on_stick_pickup.bind(stick))
-	
-	var bad_stick1: Area2D = stickPrefab.instantiate()
-	var bad_stick2: Area2D = stickPrefab.instantiate()
-	var bad_stick3: Area2D = stickPrefab.instantiate()
-	var bad_sticks: Dictionary[Area2D, Vector2] = {
-		bad_stick1: Vector2(220.0, 150.0),
-		bad_stick2: Vector2(-300.0, 200.0),
-		bad_stick3: Vector2(128.0, -190.0)
-	}
-	for stick in bad_sticks:
-		stick.set_position(bad_sticks[stick])
-		add_child(stick)
-		stick.set_sprite_tile(9) # WARNING: Magic number bad but I'm rushing
-		stick.body_entered.connect(_on_bad_stick_pickup.bind(stick))
-	
-	stickCntDisplay.set_text("%d/3 Sticks" % stickCnt)
-	
+	tinderCntDisplay.set_text("%d/3 Tinder" % 0)
+	kindlingCntDisplay.set_text("%d/2 Kindling" % 0)
+	fuelCntDisplay.set_text("%d/1 Fuel" % 0)
 	miniGame.finished.connect(_on_mini_game_finished)
 
+
 # Update Timer
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
 	
 	if canBuild && Input.is_action_just_pressed("build"):
+		# Level finishes after mini
 		miniGame.show()
 		levelHint.hide()
 		finishArea.process_mode = Node.PROCESS_MODE_DISABLED
 		player.process_mode = Node.PROCESS_MODE_DISABLED
 
-	#if levelComplete && Input.is_action_just_pressed("next_level"):
-		#global_game_data.mark_level_complete("fire")
-		#win_menu_controller.show()
 
 # Remove stick, update stick counter + HUD
-func _on_stick_pickup(body: Node2D, stick: Area2D) -> void:
-	stick.queue_free()
-	stickCnt += 1
-	stickCntDisplay.set_text("%d/3 Sticks" % stickCnt)
+func _on_stick_pickup(body: Node2D, source: Area2D) -> void:
+	source.queue_free()
+	source.remove_from_group("Tinder")
+	var tinderCnt: int = get_tree().get_node_count_in_group("Tinder")
+	tinderCntDisplay.set_text("%d/3 Sticks" % (3 - tinderCnt))
+	await player.speak("I can break this down into some good tinder.")
 
-func _on_bad_stick_pickup(body: Node2D, stick: Area2D) -> void:
-	stick.queue_free()
-	player.speak("This wood is too wet!")
+
+func _on_large_stick_pickup(body: Node2D, source: Area2D) -> void:
+	source.queue_free()
+	source.remove_from_group("Kindling")
+	var kindlingCnt: int = get_tree().get_node_count_in_group("Kindling")
+	kindlingCntDisplay.set_text("%d/2 Kindling" % (2 - kindlingCnt))
+	await player.speak("These larger sticks would make great kindling!")
+
+
+func _on_log_pickup(body: Node2D, source: Area2D) -> void:
+	source.queue_free()
+	source.remove_from_group("Fuel")
+	var fuelCnt: int = get_tree().get_node_count_in_group("Fuel")
+	fuelCntDisplay.set_text("%d/1 Fuel" % (1 - fuelCnt))
+	await player.speak("This should be enough fuel to get a small fire started.")
+	await player.speak("I'll need to find more if I want to keep it going.")
+
+
+func _on_bad_stick_pickup(body: Node2D, source: Area2D) -> void:
+	source.queue_free()
+	await player.speak("This wood is too wet!")
 
 
 # Display hint text (if objective complete)
 func _on_finish_area_body_entered(body: Node2D) -> void:
-	if stickCnt >= 3:
+	var tinderCnt: int = get_tree().get_node_count_in_group("Tinder")
+	var kindlingCnt: int = get_tree().get_node_count_in_group("Kindling")
+	var fuelCnt: int = get_tree().get_node_count_in_group("Fuel")
+	var total: int = tinderCnt + kindlingCnt + fuelCnt
+	if  total == 0:
 		levelHint.show()
 		canBuild = true
 
@@ -98,11 +95,11 @@ func _on_mini_game_finished(success: bool) -> void:
 		global_game_data.mark_level_complete("fire")
 		win_menu_controller.show()
 	else:
-		pass # WARNING: Need a fail-state
+		pass # WARNING: Fail-state?
 
 
 func _on_timer_timeout() -> void:
 	if miniGame.visible:
-		miniGame.hide()
+		_on_mini_game_finished(false)
 	lose_menu_controller.show()
 	player.process_mode = Node.PROCESS_MODE_DISABLED

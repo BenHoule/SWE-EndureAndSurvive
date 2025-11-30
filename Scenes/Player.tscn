@@ -162,3 +162,4 @@ theme_override_font_sizes/font_size = 16
 text = "This wood is too wet!"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2

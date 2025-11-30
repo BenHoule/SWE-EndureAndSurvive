@@ -35,7 +35,7 @@ func _ready() -> void:
 	logCntDisplay.set_text("%d/5 Logs" % logCnt)
 
 # Update Timer
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
 	
 	if levelComplete:
@@ -47,5 +47,6 @@ func _on_log_pickup(body: Node2D, _log: Area2D):
 	logCnt += 1
 	logCntDisplay.set_text("%d/5 Logs" % logCnt)
 	if (logCnt == 5):
+		timer.paused = true
 		levelComplete = true
 		global_game_data.mark_level_complete("shelter")

@@ -1,7 +1,10 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+
+@onready var gameMap: TileMap = $"../GameMap"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+const SPEED = 300.0
+
 @onready var dialogueBox: Label = $DialogueBox
 
 func _physics_process(delta: float) -> void:
@@ -9,8 +12,8 @@ func _physics_process(delta: float) -> void:
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
 	)
-
-	velocity = input_vector.normalized() * SPEED
+	# Attempted to make movement logic independent of frame-rate, idk how well it worked
+	velocity = input_vector.normalized() * SPEED * gameMap.rendering_quadrant_size * delta
 
 	# Animation handling
 	if input_vector.y < 0:

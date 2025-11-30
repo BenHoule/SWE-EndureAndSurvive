@@ -4,8 +4,6 @@ extends Node2D
 @onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 var timerString: String = "Time: %.1f"
 
-@onready var coordDisplay: Label = $Viewport/HUD/CoordsContainer/Coords
-
 @onready var red_check: Sprite2D = $RedCheck
 @onready var direction_message: Label = $Viewport/HUD/DirectionMessage
 @onready var player: CharacterBody2D = $Player
@@ -33,13 +31,9 @@ func _ready() -> void:
 	win_menu_controller.hide()
 	lose_menu_controller.hide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timerDisplay.set_text(timerString % timer.time_left)
-
 	_update_direction_message()
-	
-	if(timer.time_left <= 0):
-		lose_menu_controller.show()
 
 
 func _update_direction_message() -> void:
@@ -61,11 +55,12 @@ func _update_direction_message() -> void:
 		if current_target_index < target_positions.size():
 			red_check.show()
 		else:
+			timer.paused = true
 			red_check_2.show()
 			levelComplete = true
 			win_menu_controller.show()
 			global_game_data.mark_level_complete("orienteer")
-			timer.stop()
+			
 		return
 
 	direction_message.text = _get_direction_text(to_target)
@@ -96,3 +91,7 @@ func _get_direction_text(to_target: Vector2) -> String:
 		return "Go southwest"
 
 	return "Almost there..."
+
+
+func _on_timer_timeout() -> void:
+	lose_menu_controller.show()
