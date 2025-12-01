@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cymrfsewitakd"]
+[gd_scene load_steps=16 format=3 uid="uid://cymrfsewitakd"]
 
 [ext_resource type="Script" uid="uid://b1qcrox81b7mk" path="res://buildFire.gd" id="1_k54ek"]
 [ext_resource type="Texture2D" uid="uid://fsb8cdv1iycm" path="res://Assets/Wood_Sprites/wood_9.png" id="2_08nwg"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://comcuhhqu0eyi" path="res://Animations/fire_building/Frame3.png" id="8_8hr8e"]
 [ext_resource type="Texture2D" uid="uid://ct0o6gmhxfyb5" path="res://Animations/fire_building/Frame4.png" id="9_wvnad"]
 [ext_resource type="Texture2D" uid="uid://ddpcjnkbcfxua" path="res://Animations/fire_building/Frame5.png" id="10_6iyhl"]
+[ext_resource type="Script" uid="uid://du1i3qd8oubk1" path="res://Scripts/stick.gd" id="12_wvnad"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d40md"]
 animations = [{
@@ -40,6 +41,13 @@ animations = [{
 "name": &"default",
 "speed": 0.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hr8e"]
+size = Vector2(636, 476)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r78um"]
+radius = 7.0406494
+height = 51.21582
 
 [node name="MiniGameController" type="Control"]
 layout_mode = 3
@@ -108,6 +116,14 @@ grow_vertical = 2
 position = Vector2(320, 240)
 sprite_frames = SubResource("SpriteFrames_d40md")
 
+[node name="Area2D" type="Area2D" parent="miniGameContainer/fireBuildingContainer"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="miniGameContainer/fireBuildingContainer/Area2D"]
+position = Vector2(320, 240)
+shape = SubResource("RectangleShape2D_8hr8e")
+
 [node name="Instructions" type="Label" parent="miniGameContainer"]
 layout_mode = 1
 anchors_preset = -1
@@ -139,4 +155,23 @@ vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="Stick" type="Area2D" parent="."]
+z_index = 1
+position = Vector2(1264, 312)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("12_wvnad")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stick"]
+rotation = -0.0006447127
+texture = ExtResource("4_qpcia")
+region_rect = Rect2(128, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stick"]
+position = Vector2(3, -3)
+rotation = 0.693697
+shape = SubResource("CapsuleShape2D_r78um")
+
 [connection signal="item_clicked" from="miniGameContainer/ItemList" to="." method="_on_item_list_item_clicked"]
+[connection signal="area_entered" from="miniGameContainer/fireBuildingContainer/Area2D" to="." method="_on_wood_enter_firepit"]
+[connection signal="area_exited" from="miniGameContainer/fireBuildingContainer/Area2D" to="." method="_on_wood_exit_firepit"]

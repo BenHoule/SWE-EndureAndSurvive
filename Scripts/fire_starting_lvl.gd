@@ -42,7 +42,7 @@ func _process(_delta: float) -> void:
 
 
 # Remove stick, update stick counter + HUD
-func _on_stick_pickup(body: Node2D, source: Area2D) -> void:
+func _on_stick_pickup(_body: Node2D, source: Area2D) -> void:
 	source.queue_free()
 	source.remove_from_group("Tinder")
 	var tinderCnt: int = get_tree().get_node_count_in_group("Tinder")
@@ -50,7 +50,7 @@ func _on_stick_pickup(body: Node2D, source: Area2D) -> void:
 	await player.speak("I can break this down into some good tinder.")
 
 
-func _on_large_stick_pickup(body: Node2D, source: Area2D) -> void:
+func _on_large_stick_pickup(_body: Node2D, source: Area2D) -> void:
 	source.queue_free()
 	source.remove_from_group("Kindling")
 	var kindlingCnt: int = get_tree().get_node_count_in_group("Kindling")
@@ -58,7 +58,7 @@ func _on_large_stick_pickup(body: Node2D, source: Area2D) -> void:
 	await player.speak("These larger sticks would make great kindling!")
 
 
-func _on_log_pickup(body: Node2D, source: Area2D) -> void:
+func _on_log_pickup(_body: Node2D, source: Area2D) -> void:
 	source.queue_free()
 	source.remove_from_group("Fuel")
 	var fuelCnt: int = get_tree().get_node_count_in_group("Fuel")
@@ -67,13 +67,13 @@ func _on_log_pickup(body: Node2D, source: Area2D) -> void:
 	await player.speak("I'll need to find more if I want to keep it going.")
 
 
-func _on_bad_stick_pickup(body: Node2D, source: Area2D) -> void:
+func _on_bad_stick_pickup(_body: Node2D, source: Area2D) -> void:
 	source.queue_free()
 	await player.speak("This wood is too wet!")
 
 
 # Display hint text (if objective complete)
-func _on_finish_area_body_entered(body: Node2D) -> void:
+func _on_finish_area_body_entered(_body: Node2D) -> void:
 	var tinderCnt: int = get_tree().get_node_count_in_group("Tinder")
 	var kindlingCnt: int = get_tree().get_node_count_in_group("Kindling")
 	var fuelCnt: int = get_tree().get_node_count_in_group("Fuel")
@@ -83,7 +83,7 @@ func _on_finish_area_body_entered(body: Node2D) -> void:
 		canBuild = true
 
 
-func _on_finish_area_body_exited(body: Node2D) -> void:
+func _on_finish_area_body_exited(_body: Node2D) -> void:
 	canBuild = false
 
 
