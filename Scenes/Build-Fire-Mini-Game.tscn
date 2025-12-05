@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cymrfsewitakd"]
+[gd_scene load_steps=17 format=3 uid="uid://cymrfsewitakd"]
 
 [ext_resource type="Script" uid="uid://b1qcrox81b7mk" path="res://buildFire.gd" id="1_k54ek"]
 [ext_resource type="Texture2D" uid="uid://fsb8cdv1iycm" path="res://Assets/Wood_Sprites/wood_9.png" id="2_08nwg"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://ddpcjnkbcfxua" path="res://Animations/fire_building/Frame5.png" id="10_6iyhl"]
 [ext_resource type="PackedScene" uid="uid://cx003pwmepadw" path="res://Scenes/DropArea.tscn" id="11_6iyhl"]
 [ext_resource type="Script" uid="uid://du1i3qd8oubk1" path="res://Scripts/stick.gd" id="12_wvnad"]
+[ext_resource type="Texture2D" uid="uid://bw5rravdkm8kv" path="res://Assets/tinder_pile.png" id="14_btrcw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d40md"]
 animations = [{
@@ -157,7 +158,7 @@ script = ExtResource("12_wvnad")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stick"]
 rotation = -0.0006447127
-texture = ExtResource("6_bl0bb")
+texture = ExtResource("14_btrcw")
 region_rect = Rect2(128, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stick"]
