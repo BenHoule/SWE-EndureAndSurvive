@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://brbhbnrqqaa7"]
+
+[ext_resource type="Script" uid="uid://rcxdvg7tqkay" path="res://Scenes/crafting_grid.gd" id="1_hphee"]
+[ext_resource type="Texture2D" uid="uid://vrji6jvchrp3" path="res://Assets/Wood_Sprites/sprite-sheet.png" id="1_w0o4d"]
+[ext_resource type="Script" uid="uid://dxln47opyrvv5" path="res://Scripts/drag_drop_cell.gd" id="2_f1qh8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0o4d"]
+bg_color = Color(0, 0, 0.07846785, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.17709446, 0.17715812, 0.26385328, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1qh8"]
+atlas = ExtResource("1_w0o4d")
+region = Rect2(128, 192, 64, 64)
+
+[node name="CraftingGrid" type="GridContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+columns = 3
+script = ExtResource("1_hphee")
+
+[node name="DragDropCell0" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+script = ExtResource("2_f1qh8")
+
+[node name="DragDropCell1" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell2" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell3" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell4" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell5" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell6" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell7" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")
+
+[node name="DragDropCell8" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.70000005)
+layout_mode = 2
+theme_override_styles/disabled = SubResource("StyleBoxFlat_w0o4d")
+disabled = true
+icon = SubResource("AtlasTexture_f1qh8")

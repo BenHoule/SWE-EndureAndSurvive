@@ -1,25 +1,20 @@
 extends Node2D
 
 @onready var player: CharacterBody2D = $Player
-
 @onready var timer: Timer = $Timer
 @onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
-var timerString: String = "Time: %.1f"
-
 @onready var tinderCntDisplay: Label = $Viewport/HUD/VBoxContainer/TinderCntContainer/TinderCnt
 @onready var kindlingCntDisplay: Label = $Viewport/HUD/VBoxContainer/KindlingCntContainer/KindlingCnt
 @onready var fuelCntDisplay: Label = $Viewport/HUD/VBoxContainer/FuelCntContainer/FuelCnt
-
-
 @onready var finishArea: Area2D = $FinishArea
 @onready var levelHint: Label = $FinishArea/CollisionShape2D/LevelHint
 @onready var miniGame: Control = $Viewport/MiniGameController
-var canBuild: bool = false
-
-var nextLevel: String = "res://Scenes/Shelter-Building-Lvl.tscn"
-
 @onready var win_menu_controller: Control = $Viewport/winMenuController
 @onready var lose_menu_controller: Control = $Viewport/loseMenuController
+
+var canBuild: bool = false
+var timerString: String = "Time: %.1f"
+var nextLevel: String = "res://Scenes/Shelter-Building-Lvl.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://comcuhhqu0eyi" path="res://Animations/fire_building/Frame3.png" id="8_8hr8e"]
 [ext_resource type="Texture2D" uid="uid://ct0o6gmhxfyb5" path="res://Animations/fire_building/Frame4.png" id="9_wvnad"]
 [ext_resource type="Texture2D" uid="uid://ddpcjnkbcfxua" path="res://Animations/fire_building/Frame5.png" id="10_6iyhl"]
+[ext_resource type="PackedScene" uid="uid://cx003pwmepadw" path="res://Scenes/DropArea.tscn" id="11_6iyhl"]
 [ext_resource type="Script" uid="uid://du1i3qd8oubk1" path="res://Scripts/stick.gd" id="12_wvnad"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d40md"]
@@ -42,12 +43,9 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hr8e"]
-size = Vector2(636, 476)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r78um"]
-radius = 7.0406494
-height = 51.21582
+radius = 23.0
+height = 100.0
 
 [node name="MiniGameController" type="Control"]
 layout_mode = 3
@@ -116,13 +114,8 @@ grow_vertical = 2
 position = Vector2(320, 240)
 sprite_frames = SubResource("SpriteFrames_d40md")
 
-[node name="Area2D" type="Area2D" parent="miniGameContainer/fireBuildingContainer"]
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="miniGameContainer/fireBuildingContainer/Area2D"]
+[node name="DropSpot" parent="miniGameContainer/fireBuildingContainer" instance=ExtResource("11_6iyhl")]
 position = Vector2(320, 240)
-shape = SubResource("RectangleShape2D_8hr8e")
 
 [node name="Instructions" type="Label" parent="miniGameContainer"]
 layout_mode = 1
@@ -164,14 +157,14 @@ script = ExtResource("12_wvnad")
 
 [node name="Sprite2D" type="Sprite2D" parent="Stick"]
 rotation = -0.0006447127
-texture = ExtResource("4_qpcia")
+texture = ExtResource("6_bl0bb")
 region_rect = Rect2(128, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stick"]
-position = Vector2(3, -3)
-rotation = 0.693697
+position = Vector2(0, 3)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_r78um")
 
 [connection signal="item_clicked" from="miniGameContainer/ItemList" to="." method="_on_item_list_item_clicked"]
-[connection signal="area_entered" from="miniGameContainer/fireBuildingContainer/Area2D" to="." method="_on_wood_enter_firepit"]
-[connection signal="area_exited" from="miniGameContainer/fireBuildingContainer/Area2D" to="." method="_on_wood_exit_firepit"]
+[connection signal="area_entered" from="miniGameContainer/fireBuildingContainer/DropSpot" to="." method="_on_wood_enter_firepit"]
+[connection signal="area_exited" from="miniGameContainer/fireBuildingContainer/DropSpot" to="." method="_on_wood_exit_firepit"]

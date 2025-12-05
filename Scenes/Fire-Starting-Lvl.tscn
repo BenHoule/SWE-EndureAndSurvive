@@ -1,16 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://bkdil8t825bub"]
+[gd_scene load_steps=12 format=3 uid="uid://bkdil8t825bub"]
 
 [ext_resource type="Script" uid="uid://iwfe4ev3j5bt" path="res://Scripts/fire_starting_lvl.gd" id="1_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_fkh7n"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="2_q2hht"]
 [ext_resource type="PackedScene" uid="uid://dffdevs8g2oi6" path="res://Scenes/GameMap.tscn" id="2_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://xhqsptv3ukyj" path="res://Scenes/stick.tscn" id="3_hoy8s"]
-[ext_resource type="Texture2D" uid="uid://ucyv275d4xti" path="res://Assets/Wood_Sprites/wood_10.png" id="4_1hnvw"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://bmalw0jv4f7gd" path="res://Scenes/winMenu.tscn" id="5_45yrl"]
 [ext_resource type="Script" uid="uid://bii3lk3jheva0" path="res://Scripts/level_prompt.gd" id="5_rtynj"]
-[ext_resource type="Texture2D" uid="uid://crcr4ab5iw4dv" path="res://Assets/Wood_Sprites/wood_3.png" id="5_uxftv"]
-[ext_resource type="Texture2D" uid="uid://dny2cne3gs8c8" path="res://Assets/Wood_Sprites/wood_4.png" id="6_5bdjr"]
 [ext_resource type="PackedScene" uid="uid://c7s3aac4jxuvm" path="res://Scenes/lose_menu_controller.tscn" id="6_ebpm1"]
 [ext_resource type="PackedScene" uid="uid://cymrfsewitakd" path="res://Scenes/Build-Fire-Mini-Game.tscn" id="7_ln6ar"]
 
@@ -34,45 +31,27 @@ position = Vector2(-278, -93)
 
 [node name="BadStick1" parent="." groups=["Bad Sticks"] instance=ExtResource("3_hoy8s")]
 position = Vector2(220, 150)
-
-[node name="Sprite2D" parent="BadStick1" index="0"]
-texture = ExtResource("4_1hnvw")
-region_rect = Rect2(0, 192, 64, 64)
+wood_type = 9
 
 [node name="BadStick2" parent="." groups=["Bad Sticks"] instance=ExtResource("3_hoy8s")]
 position = Vector2(-300, 200)
-
-[node name="Sprite2D" parent="BadStick2" index="0"]
-texture = ExtResource("4_1hnvw")
-region_rect = Rect2(0, 192, 64, 64)
+wood_type = 9
 
 [node name="BadStick3" parent="." groups=["Bad Sticks"] instance=ExtResource("3_hoy8s")]
 position = Vector2(128, -190)
-
-[node name="Sprite2D" parent="BadStick3" index="0"]
-texture = ExtResource("4_1hnvw")
-region_rect = Rect2(0, 192, 64, 64)
+wood_type = 9
 
 [node name="LargeStick1" parent="." groups=["Kindling"] instance=ExtResource("3_hoy8s")]
 position = Vector2(-155, -84)
-
-[node name="Sprite2D" parent="LargeStick1" index="0"]
-texture = ExtResource("5_uxftv")
-region_rect = Rect2(0, 192, 64, 64)
+wood_type = 2
 
 [node name="LargeStick2" parent="." groups=["Kindling"] instance=ExtResource("3_hoy8s")]
 position = Vector2(10, 129)
-
-[node name="Sprite2D" parent="LargeStick2" index="0"]
-texture = ExtResource("5_uxftv")
-region_rect = Rect2(0, 192, 64, 64)
+wood_type = 2
 
 [node name="Log" parent="." groups=["Fuel"] instance=ExtResource("3_hoy8s")]
 position = Vector2(-260, 60)
-
-[node name="Sprite2D" parent="Log" index="0"]
-texture = ExtResource("6_5bdjr")
-region_rect = Rect2(0, 192, 64, 64)
+wood_type = 3
 
 [node name="Player" parent="." instance=ExtResource("2_q2hht")]
 position = Vector2(0, -3)
@@ -102,11 +81,6 @@ you freeze!!
 horizontal_alignment = 1
 script = ExtResource("5_rtynj")
 metadata/_edit_use_anchors_ = true
-
-[node name="Timer" type="Timer" parent="LevelPrompt"]
-wait_time = 10.0
-one_shot = true
-autostart = true
 
 [node name="FinishArea" type="Area2D" parent="."]
 position = Vector2(-288, 304)
@@ -253,16 +227,8 @@ autostart = true
 [connection signal="body_entered" from="LargeStick1" to="." method="_on_large_stick_pickup" flags=18]
 [connection signal="body_entered" from="LargeStick2" to="." method="_on_large_stick_pickup" flags=18]
 [connection signal="body_entered" from="Log" to="." method="_on_log_pickup" flags=18]
-[connection signal="timeout" from="LevelPrompt/Timer" to="LevelPrompt" method="_on_timer_timeout"]
 [connection signal="body_entered" from="FinishArea" to="." method="_on_finish_area_body_entered"]
 [connection signal="body_exited" from="FinishArea" to="." method="_on_finish_area_body_exited"]
 [connection signal="focus_exited" from="Viewport/MiniGameController" to="." method="_on_mini_game_controller_focus_exited"]
 [connection signal="hidden" from="Viewport/MiniGameController" to="." method="_on_mini_game_controller_hidden"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-
-[editable path="BadStick1"]
-[editable path="BadStick2"]
-[editable path="BadStick3"]
-[editable path="LargeStick1"]
-[editable path="LargeStick2"]
-[editable path="Log"]
