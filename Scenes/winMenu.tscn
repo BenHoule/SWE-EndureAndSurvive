@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqke1ftyfq8vn" path="res://Scripts/win_menu.gd" id="1_twskt"]
 [ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="1_uyqdj"]
-[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="2_2vu40"]
+[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Assets/Minecraftia-Regular.ttf" id="2_2vu40"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jafy5"]
 content_margin_left = 15.0

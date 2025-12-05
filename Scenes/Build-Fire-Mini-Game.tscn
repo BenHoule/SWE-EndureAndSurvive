@@ -1,11 +1,11 @@
 [gd_scene load_steps=17 format=3 uid="uid://cymrfsewitakd"]
 
-[ext_resource type="Script" uid="uid://b1qcrox81b7mk" path="res://buildFire.gd" id="1_k54ek"]
+[ext_resource type="Script" uid="uid://b1qcrox81b7mk" path="res://Scripts/buildFire.gd" id="1_k54ek"]
 [ext_resource type="Texture2D" uid="uid://fsb8cdv1iycm" path="res://Assets/Wood_Sprites/wood_9.png" id="2_08nwg"]
 [ext_resource type="Texture2D" uid="uid://crcr4ab5iw4dv" path="res://Assets/Wood_Sprites/wood_3.png" id="3_xmgwo"]
 [ext_resource type="Texture2D" uid="uid://dny2cne3gs8c8" path="res://Assets/Wood_Sprites/wood_4.png" id="4_qpcia"]
 [ext_resource type="Texture2D" uid="uid://ckkjhx6uqt8d1" path="res://Animations/fire_building/Frame6.png" id="5_qpcia"]
-[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="5_xmgwo"]
+[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Assets/Minecraftia-Regular.ttf" id="5_xmgwo"]
 [ext_resource type="Texture2D" uid="uid://bfmjkvruh5i2r" path="res://Animations/fire_building/Frame1.png" id="6_bl0bb"]
 [ext_resource type="Texture2D" uid="uid://c72ytns0mihgc" path="res://Animations/fire_building/Frame2.png" id="7_66q8n"]
 [ext_resource type="Texture2D" uid="uid://comcuhhqu0eyi" path="res://Animations/fire_building/Frame3.png" id="8_8hr8e"]

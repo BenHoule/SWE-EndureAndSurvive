@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ckkjhx6uqt8d1" path="res://Animations/fire_building/Frame6.png" id="3_70yj6"]
 [ext_resource type="Texture2D" uid="uid://d0d0m7qexngxa" path="res://Assets/basictiles.png" id="3_ii1mw"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="3_tvdui"]
-[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_6ngfu"]
+[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Assets/Minecraftia-Regular.ttf" id="4_6ngfu"]
 [ext_resource type="PackedScene" uid="uid://bmalw0jv4f7gd" path="res://Scenes/winMenu.tscn" id="5_2w8f2"]
 [ext_resource type="PackedScene" uid="uid://c7s3aac4jxuvm" path="res://Scenes/lose_menu_controller.tscn" id="5_aj0kj"]
 [ext_resource type="Script" uid="uid://bii3lk3jheva0" path="res://Scripts/level_prompt.gd" id="5_qqg5x"]
@@ -302,15 +302,18 @@ metadata/_edit_use_anchors_ = true
 [node name="Viewport" type="CanvasLayer" parent="."]
 
 [node name="loseMenuController" parent="Viewport" instance=ExtResource("5_aj0kj")]
-offset_left = 397.0
-offset_top = 184.0
-offset_right = 397.0
-offset_bottom = 184.0
+visible = false
+offset_left = -9.0
+offset_top = 4.0
+offset_right = -9.0
+offset_bottom = 4.0
 
 [node name="winMenuController" parent="Viewport" instance=ExtResource("5_2w8f2")]
+visible = false
 metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" parent="Viewport" instance=ExtResource("2_3tp2t")]
+visible = false
 offset_left = 474.0
 offset_top = -28.0
 offset_right = 474.0
@@ -368,6 +371,7 @@ offset_right = -30.040009
 offset_bottom = 20.239998
 
 [node name="Compass" type="Sprite2D" parent="Viewport/HUD/CompassContainer"]
+visible = false
 position = Vector2(1800, 900)
 scale = Vector2(8, 8)
 texture = ExtResource("6_yk6wr")

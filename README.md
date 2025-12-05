@@ -34,6 +34,7 @@ Players will complete 3 levels consisting of collect materials, completing inter
 | Build              | B                              |
 | Tie Lashing        | F                              |
 | Pause Menu         | esc                            |
+| Main Menu Cheat    | N                              |
 
 ## How to Build & Run
 
