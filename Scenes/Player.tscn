@@ -123,8 +123,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tdg3f"]
-radius = 37.05403
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gntrk"]
+radius = 26.666666
+height = 93.33333
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
@@ -139,7 +140,7 @@ frame_progress = 0.4336585
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.15, 0.15)
-shape = SubResource("CircleShape2D_tdg3f")
+shape = SubResource("CapsuleShape2D_gntrk")
 
 [node name="DialogueBox" type="Label" parent="."]
 visible = false

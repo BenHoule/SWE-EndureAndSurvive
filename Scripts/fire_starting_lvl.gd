@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player: CharacterBody2D = $Player
 @onready var timer: Timer = $Timer
+@onready var fire: StaticBody2D = $Fire
 @onready var timerDisplay: Label = $Viewport/HUD/TimerContainer/Timer
 @onready var tinderCntDisplay: Label = $Viewport/HUD/VBoxContainer/TinderCntContainer/TinderCnt
 @onready var kindlingCntDisplay: Label = $Viewport/HUD/VBoxContainer/KindlingCntContainer/KindlingCnt
@@ -87,6 +88,8 @@ func _on_mini_game_finished(success: bool) -> void:
 	player.process_mode = Node.PROCESS_MODE_INHERIT
 	if success:
 		timer.paused = true
+		fire.process_mode = Node.PROCESS_MODE_INHERIT
+		fire.show()
 		global_game_data.mark_level_complete("fire")
 		win_menu_controller.show()
 	else:

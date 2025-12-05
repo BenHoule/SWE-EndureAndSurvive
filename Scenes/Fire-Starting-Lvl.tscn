@@ -1,15 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://bkdil8t825bub"]
+[gd_scene load_steps=14 format=3 uid="uid://bkdil8t825bub"]
 
 [ext_resource type="Script" uid="uid://iwfe4ev3j5bt" path="res://Scripts/fire_starting_lvl.gd" id="1_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_fkh7n"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="2_q2hht"]
 [ext_resource type="PackedScene" uid="uid://dffdevs8g2oi6" path="res://Scenes/GameMap.tscn" id="2_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://xhqsptv3ukyj" path="res://Scenes/stick.tscn" id="3_hoy8s"]
+[ext_resource type="Texture2D" uid="uid://ckkjhx6uqt8d1" path="res://Animations/fire_building/Frame6.png" id="4_1hnvw"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_rcc7b"]
 [ext_resource type="PackedScene" uid="uid://bmalw0jv4f7gd" path="res://Scenes/winMenu.tscn" id="5_45yrl"]
 [ext_resource type="Script" uid="uid://bii3lk3jheva0" path="res://Scripts/level_prompt.gd" id="5_rtynj"]
 [ext_resource type="PackedScene" uid="uid://c7s3aac4jxuvm" path="res://Scenes/lose_menu_controller.tscn" id="6_ebpm1"]
 [ext_resource type="PackedScene" uid="uid://cymrfsewitakd" path="res://Scenes/Build-Fire-Mini-Game.tscn" id="7_ln6ar"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hnvw"]
+size = Vector2(10, 9)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcc7b"]
 radius = 76.00658
@@ -53,6 +57,21 @@ wood_type = 2
 position = Vector2(-260, 60)
 wood_type = 3
 
+[node name="Fire" type="StaticBody2D" parent="."]
+process_mode = 4
+visible = false
+position = Vector2(-293, 297)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Fire"]
+position = Vector2(1.9073486e-06, 1.9073486e-06)
+scale = Vector2(0.083, 0.083)
+texture = ExtResource("4_1hnvw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_1hnvw")
+
 [node name="Player" parent="." instance=ExtResource("2_q2hht")]
 position = Vector2(0, -3)
 
@@ -84,6 +103,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="FinishArea" type="Area2D" parent="."]
 position = Vector2(-288, 304)
+collision_mask = 2
+input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FinishArea"]
 shape = SubResource("CircleShape2D_rcc7b")

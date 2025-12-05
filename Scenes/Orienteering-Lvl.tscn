@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dlxkck7m8ompw"]
+[gd_scene load_steps=18 format=4 uid="uid://dlxkck7m8ompw"]
 
 [ext_resource type="Script" uid="uid://fyj0g66fhmti" path="res://Scripts/orienteering_lvl.gd" id="1_tvdui"]
 [ext_resource type="PackedScene" uid="uid://b30o5f1bq05fe" path="res://Scenes/Pause-Menu.tscn" id="2_3tp2t"]
 [ext_resource type="PackedScene" uid="uid://dffdevs8g2oi6" path="res://Scenes/GameMap.tscn" id="2_tvdui"]
+[ext_resource type="Texture2D" uid="uid://ckkjhx6uqt8d1" path="res://Animations/fire_building/Frame6.png" id="3_70yj6"]
+[ext_resource type="Texture2D" uid="uid://d0d0m7qexngxa" path="res://Assets/basictiles.png" id="3_ii1mw"]
 [ext_resource type="PackedScene" uid="uid://1xgjv86wmaqx" path="res://Scenes/Player.tscn" id="3_tvdui"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="4_6ngfu"]
 [ext_resource type="PackedScene" uid="uid://bmalw0jv4f7gd" path="res://Scenes/winMenu.tscn" id="5_2w8f2"]
@@ -11,11 +13,263 @@
 [ext_resource type="Texture2D" uid="uid://b777npdg61lo6" path="res://Assets/compass.png" id="6_yk6wr"]
 [ext_resource type="Texture2D" uid="uid://blka434tpwiko" path="res://Assets/RedCheck.png" id="7_5vvvl"]
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y40n0"]
+texture = ExtResource("3_ii1mw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+3:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dfnow"]
+sources/0 = SubResource("TileSetAtlasSource_y40n0")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7verj"]
+texture = ExtResource("3_ii1mw")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+4:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:9/0 = 0
+5:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:9/0 = 0
+7:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+3:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+3:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mmvms"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7verj")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii1mw"]
+size = Vector2(10, 9)
+
 [node name="LevelController" type="Node2D"]
 script = ExtResource("1_tvdui")
 
 [node name="GameMap" parent="." instance=ExtResource("2_tvdui")]
 layer_0/tile_data = PackedInt32Array(-589849, 131072, 1, -524313, 131072, 1, -589848, 131072, 1, -524312, 131072, 1)
+
+[node name="Floor" type="TileMapLayer" parent="."]
+z_index = 2
+tile_map_data = PackedByteArray("AAD+//f/AAAFAAUAAAD+//j/AAAAAAEAAAD7//j/AAAAAAEAAAD7//n/AAAAAAEAAAD8//n/AAAAAAEAAAD8//j/AAAAAAEAAAD8//r/AAAAAAEAAAD9//n/AAAAAAEAAAD+//n/AAAAAAEAAAD9//j/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_dfnow")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+z_index = 2
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD7//r/AAAHAAIAAAD+//r/AAAHAAIAAAD///r/AAAHAAIAAAD9//r/AAAHAAIAAAD6//r/AAAHAAIAAAD///n/AAAHAAEAAAD///j/AAAHAAEAAAD///f/AAAHAAEAAAD6//n/AAAHAAEAAAD6//f/AAAHAAEAAAD6//j/AAAHAAEAAAD7//f/AAAHAAIAAAD8//f/AAAHAAIAAAD9//f/AAAHAAIAAAD+//f/AAAHAAIAAAA=")
+tile_set = SubResource("TileSet_mmvms")
+
+[node name="Furniture" type="TileMapLayer" parent="."]
+z_index = 2
+tile_map_data = PackedByteArray("AAD+//f/AAAFAAUAAAD+//j/AAAFAAYAAAA=")
+tile_set = SubResource("TileSet_dfnow")
+
+[node name="Fire" type="StaticBody2D" parent="."]
+position = Vector2(-293, 297)
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Fire"]
+position = Vector2(1.9073486e-06, 1.9073486e-06)
+scale = Vector2(0.083, 0.083)
+texture = ExtResource("3_70yj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fire"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ii1mw")
 
 [node name="Player" parent="." instance=ExtResource("3_tvdui")]
 position = Vector2(0, -3)

@@ -1,9 +1,9 @@
 extends Node2D
 
 @onready var structure: Array[TileMapLayer] = [
-	$GameMap/Floor,
-	$GameMap/Walls,
-	$GameMap/Furniture
+	$Floor,
+	$Walls,
+	$Furniture
 ]
 @onready var player: CharacterBody2D = $Player
 @onready var finishArea: Area2D = $FinishArea
