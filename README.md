@@ -56,9 +56,9 @@ Players will complete 3 levels consisting of collect materials, completing inter
 ## Known Issues & Bugs
 
 *  When accessing the game on a hosted service (e.g. through https://benhoule.github.io/) the browser may cache the game version. Site data must be cleared to access updated versions of the game.
-  *  **Normal browser shortcuts (e.g f12 / ctrl+shift+i) are intercepted by Godot** 
-  *  *(From browser) > "Settings and more" > "More tools" > "Developer tools"*
-  *  *(From Dev tools) > Application > Storage > Clear site data*
+*  *  **Normal browser shortcuts (e.g f12 / ctrl+shift+i) are intercepted by Godot** 
+*  *  *(From browser) > "Settings and more" > "More tools" > "Developer tools"*
+*  *  *(From Dev tools) > Application > Storage > Clear site data*
 *  In the web version the drag-&-drop items get offsetted from the cursor
 
 ## Credits & Licenses
@@ -86,7 +86,7 @@ https://opengameart.org/content/tiny-16-basic-game
 
 Attribution: Lanea Zimmerman. The anti-DRM clause of CC-BY 3.0 is waved.
 
----
+--
 
 Pixel Art Wood from itch.io
 https://frostwindz.itch.io/pixel-art-wood
