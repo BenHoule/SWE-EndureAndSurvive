@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ss8spljdm4n" path="res://Animations/lean_to_building/Frame3.png" id="5_3csv3"]
 [ext_resource type="Texture2D" uid="uid://dhmyyulsmxy7o" path="res://Animations/lean_to_building/Frame4.png" id="6_e2lfq"]
 [ext_resource type="Texture2D" uid="uid://c5coxnqvm60ji" path="res://Animations/lean_to_building/Frame5.png" id="7_nlrxs"]
-[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Minecraftia-Regular.ttf" id="12_ttmu6"]
+[ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Assets/Minecraftia-Regular.ttf" id="12_ttmu6"]
 [ext_resource type="Script" uid="uid://du1i3qd8oubk1" path="res://Scripts/stick.gd" id="13_l6kg8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d40md"]

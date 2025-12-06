@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://krfnsnmgi0cb"]
+[gd_scene load_steps=7 format=3 uid="uid://krfnsnmgi0cb"]
 
 [ext_resource type="Script" uid="uid://b2nhey2xksjrw" path="res://Scripts/main_menu.gd" id="1_qibcp"]
 [ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="2_qibcp"]
+[ext_resource type="AudioStream" uid="uid://r7fid2833wrg" path="res://Assets/Menu Selection Click.wav" id="3_muovx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qibcp"]
 content_margin_left = 15.0
@@ -134,3 +135,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qibcp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tq3op")
 theme_override_styles/hover = SubResource("StyleBoxFlat_muovx")
 text = "QUIT"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_muovx")
+volume_db = 3.534

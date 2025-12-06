@@ -5,6 +5,7 @@ extends Control
 @onready var orienteerLvlBtn: Button = %orienteerLvlBtn
 @onready var settingsBtn: Button = %settingsBtn
 @onready var quitBtn: Button = %quitBtn
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # TBH enum is probably unnecessary, could just be passing strings.
 # We aren't paying by the byte here.
@@ -38,10 +39,16 @@ func _process(_delta: float) -> void:
 func _load_level(level: LevelType) -> void:
 	match level:
 		LevelType.FIRE_STARTING:
+			audio.play()
+			await get_tree().create_timer(0.1).timeout
 			get_tree().change_scene_to_file("res://Scenes/Fire-Starting-Lvl.tscn")
 		LevelType.SHELTER_BUILDING:
+			audio.play()
+			await get_tree().create_timer(0.1).timeout
 			get_tree().change_scene_to_file("res://Scenes/Shelter-Building-Lvl.tscn")
 		LevelType.ORIENTEERING:
+			audio.play()
+			await get_tree().create_timer(0.1).timeout
 			get_tree().change_scene_to_file("res://Scenes/Orienteering-Lvl.tscn")
 		_:
 			# Maybe have some error handling here? Should just be unreachable though.
