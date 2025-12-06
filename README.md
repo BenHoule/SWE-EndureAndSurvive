@@ -85,7 +85,9 @@ Tiny 16 Basic Game Asset Pack from OpenGameArt
 https://opengameart.org/content/tiny-16-basic-game
 
 Attribution: Lanea Zimmerman. The anti-DRM clause of CC-BY 3.0 is waved.
+
 ---
+
 Pixel Art Wood from itch.io
 https://frostwindz.itch.io/pixel-art-wood
 
