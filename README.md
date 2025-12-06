@@ -58,7 +58,7 @@ Players will complete 3 levels consisting of collect materials, completing inter
 *  When accessing the game on a hosted service (e.g. through https://benhoule.github.io/) the browser may cache the game version. Site data must be cleared to access updated versions of the game.
    *  **Normal browser shortcuts (e.g f12 / ctrl+shift+i) are intercepted by Godot** 
    1.  *(From browser) > "Settings and more" > "More tools" > "Developer tools"*
-   2.  *(From Dev tools) > Application > Storage > Clear site data*
+   2.  *(From dev tools) > Application > Storage > Clear site data*
 *  In the web version the drag-&-drop items get offsetted from the cursor
 
 ## Credits & Licenses
