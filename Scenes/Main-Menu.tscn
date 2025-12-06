@@ -139,3 +139,9 @@ text = "QUIT"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_muovx")
 volume_db = 3.534
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Prototype v2 - 12.5.25"
