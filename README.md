@@ -59,7 +59,7 @@ Players will complete 3 levels consisting of collect materials, completing inter
    *  **Normal browser shortcuts (e.g f12 / ctrl+shift+i) are intercepted by Godot** 
       *  *`(From browser)`* > `Settings and more` > `More tools` > `Developer tools`
       *  *`(From dev tools)`* > `Application` > `Storage` > `Clear site data`
-*  In the web version the drag-&-drop items get offsetted from the cursor
+*  In the web version the drag-&-drop items are offsett from the cursor. This is likely due to quirks in how the browser viewport is rendered.
 
 ## Credits & Licenses
 
