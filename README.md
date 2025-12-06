@@ -41,18 +41,24 @@ Players will complete 3 levels consisting of collect materials, completing inter
 1. Install Godot 4.5.1.
 2. Clone the project repository:
    
-   git clone https://github.com/BenHoule/SWE-EndureAndSurvive.git
+  `git clone https://github.com/BenHoule/SWE-EndureAndSurvive.git`
 
-4. Open Godot → Import → Select the project folder.
-5. Click Run Project.
+3. Open Godot → Import → Select the project folder.
+4. Click Run Project.
 
-### Alternative
-Open the game in your brower: https://benhoule.github.io/
+**Once the project is initialized, it can be easily be exported to Mac, Windows, or Linux through the Godot editor.**
 
-**The project requires no additional packages or plugins and runs on Mac, Windows, and Linux.**
+### Alternatives
+*  Open the game in your brower: https://benhoule.github.io/
+  **This requires no additional packages or plugins and runs on Mac, Windows, and Linux.**
+
 
 ## Known Issues & Bugs
 
+*  When accessing the game on a hosted service (e.g. through https://benhoule.github.io/) the browser may cache the game version. Site data must be cleared to access updated versions of the game.
+  *  **Normal browser shortcuts (e.g f12 / ctrl+shift+i) are intercepted by Godot** 
+  *  *(From browser) > "Settings and more" > "More tools" > "Developer tools"*
+  *  *(From Dev tools) > Application > Storage > Clear site data*
 *  In the web version the drag-&-drop items get offsetted from the cursor
 
 ## Credits & Licenses
@@ -79,3 +85,8 @@ Tiny 16 Basic Game Asset Pack from OpenGameArt
 https://opengameart.org/content/tiny-16-basic-game
 
 Attribution: Lanea Zimmerman. The anti-DRM clause of CC-BY 3.0 is waved.
+---
+Pixel Art Wood from itch.io
+https://frostwindz.itch.io/pixel-art-wood
+
+Attribution: Frostwindz.
