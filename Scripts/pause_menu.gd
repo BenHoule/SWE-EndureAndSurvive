@@ -4,6 +4,7 @@ extends Control
 @onready var settingsBtn: Button = %settingsBtn
 @onready var mainMenuBtn: Button = %mainMenuBtn
 @onready var quitBtn: Button = %quitBtn
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,23 +25,29 @@ func _process(_delta: float) -> void:
 			_pause()
 
 func _pause() -> void:
+	audio.play()
 	show()
 	# Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	
 
 func _resume() -> void:
+	audio.play()
 	hide()
 	# Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
 
 
-func _open_settings() -> void:
-	pass
-
 func _return_to_main() -> void:
 	get_tree().paused = false
+	audio.play()
+	await audio.finished
 	get_tree().change_scene_to_file("res://Scenes/Main-Menu.tscn")
 
-func _quit():
+func _quit() -> void:
+	audio.play()
+	await audio.finished
 	get_tree().quit()
+
+func _open_settings() -> void:
+	pass

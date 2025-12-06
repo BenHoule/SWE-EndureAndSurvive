@@ -60,5 +60,7 @@ func _open_settings() -> void:
 
 # Exits the game
 func _quit() -> void:
+	audio.play()
+	await audio.finished
 	get_tree().quit()
 	pass

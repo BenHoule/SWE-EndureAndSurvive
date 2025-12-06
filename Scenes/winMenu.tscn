@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmalw0jv4f7gd"]
+[gd_scene load_steps=8 format=3 uid="uid://bmalw0jv4f7gd"]
 
 [ext_resource type="Script" uid="uid://bqke1ftyfq8vn" path="res://Scripts/win_menu.gd" id="1_twskt"]
 [ext_resource type="FontFile" uid="uid://sdkypx1d2erd" path="res://Assets/Minecraft.ttf" id="1_uyqdj"]
 [ext_resource type="FontFile" uid="uid://cih01xdwawvps" path="res://Assets/Minecraftia-Regular.ttf" id="2_2vu40"]
+[ext_resource type="AudioStream" uid="uid://r7fid2833wrg" path="res://Assets/Menu Selection Click.wav" id="4_q3awx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jafy5"]
 content_margin_left = 15.0
@@ -100,3 +101,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_jafy5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_45flq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yb3gq")
 text = "MAIN MENU"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_q3awx")
+volume_db = 3.534

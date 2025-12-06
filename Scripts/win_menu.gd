@@ -3,6 +3,7 @@ extends Control
 @onready var next_btn: Button = %nextBtn
 @onready var settingsBtn: Button = %settingsBtn
 @onready var mainMenuBtn: Button = %mainMenuBtn
+@onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	next_btn.pressed.connect(_next_level)
@@ -13,12 +14,16 @@ func _open_settings() -> void:
 	pass
 
 func _return_to_main() -> void:
+	audio.play()
+	await audio.finished
 	get_tree().change_scene_to_file("res://Scenes/Main-Menu.tscn")
 
 
 func _next_level() -> void:
 	var current_scene = get_tree().current_scene.scene_file_path
-
+	
+	audio.play()
+	await audio.finished
 	match current_scene:
 		"res://Scenes/Fire-Starting-Lvl.tscn":
 			get_tree().change_scene_to_file("res://Scenes/Shelter-Building-Lvl.tscn")
@@ -31,4 +36,6 @@ func _next_level() -> void:
 
 
 func _quit():
+	audio.play()
+	await audio.finished
 	get_tree().quit()
